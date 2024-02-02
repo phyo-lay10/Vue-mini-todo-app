@@ -10,7 +10,7 @@
             @keyup.enter="addList"
             v-model="inputTodo"
             placeholder="Add to do list"
-            class="form-control shadow border-0"
+            class="form-control shadow"
             :class="{ 'is-invalid': inputInvalid }"
           />
           <div v-if="inputInvalid" class="invalid-feedback">
@@ -106,14 +106,13 @@ const Id = Math.floor(Math.random() * 10) + 1;
 const inputTodo = ref("");
 const editingTodo = ref();
 const doneTodos = ref([]);
+const inputInvalid = ref(false);
 const todos = ref([
   {
     id: Id,
     name: "wake up early",
   },
 ]);
-
-const inputInvalid = ref(false);
 
 // create
 const addList = () => {
